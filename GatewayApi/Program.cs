@@ -25,4 +25,4 @@ app.UseCors("AllowFrontend");
 
 await app.UseOcelot();
 
-app.Run("http://localhost:5000");
+app.Run("http://*:5000");
