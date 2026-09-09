@@ -15,7 +15,10 @@ builder.Services.AddCors(options =>
     });
 });
 
-builder.Configuration.AddJsonFile("ocelot.json", optional: false, reloadOnChange: true);
+var environment = builder.Environment.EnvironmentName;
+var ocelotConfigFile = environment == "Docker" ? "ocelot.Docker.json" : "ocelot.json";
+
+builder.Configuration.AddJsonFile(ocelotConfigFile, optional: false, reloadOnChange: true);
 
 builder.Services.AddOcelot(builder.Configuration);
 
@@ -25,4 +28,4 @@ app.UseCors("AllowFrontend");
 
 await app.UseOcelot();
 
-app.Run("http://localhost:5000");
+app.Run("http://*:5000");
