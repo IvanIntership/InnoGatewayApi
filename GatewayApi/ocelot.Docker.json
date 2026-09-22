@@ -71,6 +71,30 @@
       "UpstreamPathTemplate": "/specializations/{everything}",
       "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Options" ],
       "RateLimitOptions": { "ClientWhitelist": [], "EnableRateLimiting": true, "Period": "1m", "Limit": 100, "PeriodTimespan": 30 }
+    },
+    {
+      "DownstreamPathTemplate": "/appointments/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [{ "Host": "appointments_api", "Port": 8080 }],
+      "UpstreamPathTemplate": "/appointments/{everything}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Options" ],
+      "RateLimitOptions": { "ClientWhitelist": [], "EnableRateLimiting": true, "Period": "1m", "Limit": 100, "PeriodTimespan": 30 }
+    },
+    {
+      "DownstreamPathTemplate": "/results/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [{ "Host": "appointments_api", "Port": 8080 }],
+      "UpstreamPathTemplate": "/results/{everything}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Options" ],
+      "RateLimitOptions": { "ClientWhitelist": [], "EnableRateLimiting": true, "Period": "1m", "Limit": 100, "PeriodTimespan": 30 }
+    },
+    {
+      "DownstreamPathTemplate": "/schedules/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [{ "Host": "appointments_api", "Port": 8080 }],
+      "UpstreamPathTemplate": "/schedules/{everything}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Options" ],
+      "RateLimitOptions": { "ClientWhitelist": [], "EnableRateLimiting": true, "Period": "1m", "Limit": 100, "PeriodTimespan": 30 }
     }
   ],
   "GlobalConfiguration": {
